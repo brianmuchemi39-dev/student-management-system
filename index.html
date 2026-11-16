@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Giakanja Primary School</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">Giakanja Primary School</a>
+  <button id="menuBtn" aria-label="Menu">&#9776;</button>
+  <nav id="nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html" >About Us</a>
+    <a href="courses.html" >Courses</a>
+    <a href="contact.html" >Contact</a>
+  </nav>
+</header>
+<section class="hero">
+  <h1>Welcome to Giakanja Primary School</h1>
+  <p>Manage your students in one simple place.</p>
+  <a class="btn" href="#register">Register a student</a>
+</section>
+
+<main>
+  <h2>Dashboard</h2>
+  <div class="grid stats">
+    <div class="card"><h3 id="total">0</h3><p>Total students</p></div>
+    <div class="card"><h3 id="passed">0</h3><p>Passed</p></div>
+    <div class="card"><h3 id="failed">0</h3><p>Failed</p></div>
+    <div class="card"><h3 id="average">0</h3><p>Average marks</p></div>
+  </div>
+
+  <h2 id="register">Register a student</h2>
+  <form id="studentForm" class="card">
+    <label>Full name <input id="name" type="text"></label>
+    <label>Age <input id="age" type="number"></label>
+    <label>Gender
+      <select id="gender"><option value="">Choose...</option><option>Female</option><option>Male</option></select>
+    </label>
+    <label>Course <select id="course"><option value="">Choose...</option></select></label>
+    <label>Marks (0-100) <input id="marks" type="number"></label>
+    <button class="btn" type="submit">Register</button>
+    <p id="formMessage"></p>
+  </form>
+
+  <h2>Student records</h2>
+  <input id="search" type="text" placeholder="Search by name...">
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Name</th><th>Age</th><th>Gender</th><th>Course</th><th>Marks</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+  <p id="searchMessage" class="error"></p>
+
+  <h2>Performance summary</h2>
+  <div id="summary" class="grid stats"></div>
+</main>
+<footer>
+  <p><b>Giakanja Primary School</b></p>
+  <p><a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="courses.html">Courses</a> | <a href="contact.html">Contact</a></p>
+  <p>&copy; 2026 Giakanja Primary School. All rights reserved.</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

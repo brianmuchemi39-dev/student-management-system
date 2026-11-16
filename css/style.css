@@ -1,0 +1,74 @@
+/* Colour theme stored in variables */
+:root {
+  --main: #0f5c5c;
+  --accent: #f2a541;
+  --light: #f4f7f7;
+  --text: #1d2b2b;
+  --good: #1e8e3e;
+  --bad: #d93025;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Georgia, serif; color: var(--text); background: var(--light); line-height: 1.5; }
+h1, h2, h3, nav, button, th { font-family: Arial, sans-serif; }
+main { max-width: 1000px; margin: auto; padding: 1rem; }
+h2 { margin-top: 2.5rem; color: var(--main); }
+
+/* Header and navigation */
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+         background: var(--main); padding: 0.8rem 1.5rem; }
+.logo { color: white; font: bold 1.3rem Arial; text-decoration: none; }
+nav a { color: white; text-decoration: none; margin-left: 1rem; padding: 0.3rem 0; border-bottom: 3px solid transparent; transition: 0.3s; }
+nav a:hover, nav a.active { border-color: var(--accent); }
+#menuBtn { display: none; background: none; color: white; border: 0; font-size: 1.8rem; cursor: pointer; }
+
+/* Hero */
+.hero { background: linear-gradient(var(--main), #0b4343); color: white; text-align: center; padding: 3rem 1rem; }
+
+/* Cards and grids */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+.grid.stats { grid-template-columns: repeat(4, 1fr); }
+.card { background: white; padding: 1.2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: 0.3s; }
+.card:hover { transform: translateY(-3px); }
+.stats h3 { font-size: 2rem; margin: 0; color: var(--main); }
+
+/* Forms and buttons */
+label { display: block; margin-bottom: 0.8rem; font-weight: bold; }
+input, select, textarea { display: block; width: 100%; padding: 0.6rem; margin-top: 0.3rem; border: 1px solid #bbb; border-radius: 6px; font: inherit; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+.btn, button { background: var(--accent); color: var(--text); border: 0; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; }
+.btn:hover, button:hover { filter: brightness(0.9); }
+.error { color: var(--bad); }
+.success { color: var(--good); }
+
+/* Table */
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: white; margin-top: 1rem; }
+th { background: var(--main); color: white; text-align: left; }
+th, td { padding: 0.7rem; }
+tr:hover td { background: #eef5f5; }
+.Excellent, .Very { color: var(--good); font-weight: bold; }
+.Good { color: #5a9a1e; font-weight: bold; }
+.Average { color: #c77d00; font-weight: bold; }
+.Failed { color: var(--bad); font-weight: bold; }
+td button { padding: 0.3rem 0.6rem; margin-right: 0.3rem; }
+
+.map { background: #d5e3e3; height: 200px; margin-top: 1rem; display: grid; place-items: center; border-radius: 10px; }
+
+/* Footer */
+footer { background: var(--main); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
+footer a { color: var(--accent); }
+
+/* Tablet */
+@media (max-width: 900px) {
+  .grid, .grid.stats { grid-template-columns: repeat(2, 1fr); }
+}
+/* Mobile */
+@media (max-width: 600px) {
+  .grid, .grid.two, .grid.stats { grid-template-columns: 1fr; }
+  #menuBtn { display: block; }
+  nav { display: none; width: 100%; }
+  nav.open { display: block; }
+  nav a { display: block; margin: 0.5rem 0; }
+}
